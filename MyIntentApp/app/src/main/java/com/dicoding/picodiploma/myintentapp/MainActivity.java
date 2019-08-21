@@ -1,6 +1,7 @@
 package com.dicoding.picodiploma.myintentapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnMoveActivity;
     Button btnMoveWithDataActivity;
     Button btnMoveWithObject;
+    Button btnDialPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnMoveWithObject = findViewById(R.id.btn_move_activity_object);
         btnMoveWithObject.setOnClickListener(this);
+
+        btnDialPhone = findViewById(R.id.btn_dial_number);
+        btnDialPhone.setOnClickListener(this);
     }
 
     @Override
@@ -49,6 +54,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent moveWithObjectIntent = new Intent(MainActivity.this, MoveWithObjectActivity.class);
                 moveWithObjectIntent.putExtra(MoveWithObjectActivity.EXTRA_PERSON, person);
                 startActivity(moveWithObjectIntent);
+                break;
+            case R.id.btn_dial_number:
+                String phoneNumber = "08221195851";
+                Intent dialPhoneIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber ));
+                startActivity(dialPhoneIntent);
                 break;
         }
     }
