@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.submission01_zuhra;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,7 +36,15 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-                Toast.makeText(MainActivity.this, films.get(i).getJudul(), Toast.LENGTH_SHORT).show();
+
+                Film film = new Film();
+                film.setJudul(films.get(i).getJudul());
+                film.setDetail(films.get(i).getDetail());
+                film.setPoster(films.get(i).getPoster());
+
+                Intent moveThisFilmToDetailIntent = new Intent(MainActivity.this, DetailFilmActivity.class);
+                moveThisFilmToDetailIntent.putExtra("Film", film);
+                startActivity(moveThisFilmToDetailIntent);
             }
         });
     }
