@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Sub_02</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tv_show">TV Show</string>
 </resources>
