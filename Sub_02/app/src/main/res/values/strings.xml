@@ -2,4 +2,8 @@
     <string name="app_name">Sub_02</string>
     <string name="title_movie">Movie</string>
     <string name="title_tv_show">TV Show</string>
+
+    <string name="hello_movie_fragment">Hello movie fragment</string>
+    <string name="hello_tv_show_fragment">Hello tv show fragment</string>
+
 </resources>
